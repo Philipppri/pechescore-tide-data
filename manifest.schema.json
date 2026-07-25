@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Philipppri/pechescore-tide-data/manifest.schema.json",
+  "title": "PêcheScore Tide Data Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "sourceModel",
+    "generatedAtUtc",
+    "attribution",
+    "assets"
+  ],
+  "properties": {
+    "schemaVersion": {"type": "integer", "const": 1},
+    "dataVersion": {"type": "string", "minLength": 1},
+    "sourceModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "doi"],
+      "properties": {
+        "name": {"type": "string", "const": "FES2022b"},
+        "version": {"type": "string"},
+        "doi": {"type": "string"}
+      }
+    },
+    "generatedAtUtc": {"type": "string", "format": "date-time"},
+    "attribution": {"type": "string", "minLength": 1},
+    "format": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "version"],
+      "properties": {
+        "id": {"type": "string"},
+        "version": {"type": "integer", "minimum": 1}
+      }
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "fileName",
+          "downloadUrl",
+          "sizeBytes",
+          "sha256",
+          "bounds"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9._-]+$"},
+          "fileName": {"type": "string", "minLength": 1},
+          "downloadUrl": {"type": "string", "format": "uri"},
+          "sizeBytes": {"type": "integer", "minimum": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "bounds": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["south", "west", "north", "east"],
+            "properties": {
+              "south": {"type": "number", "minimum": -90, "maximum": 90},
+              "west": {"type": "number", "minimum": -180, "maximum": 180},
+              "north": {"type": "number", "minimum": -90, "maximum": 90},
+              "east": {"type": "number", "minimum": -180, "maximum": 180}
+            }
+          },
+          "qualityClasses": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

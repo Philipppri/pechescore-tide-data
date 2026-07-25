@@ -1,0 +1,34 @@
+# Données sources interdites
+*.nc
+*.nc.xz
+*.xz
+
+# Assets générés localement : à publier dans Releases, pas dans Git
+*.pstide
+*.bin
+release-assets/
+work/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Secrets et fichiers locaux
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+local-review-access/
+*access-local*

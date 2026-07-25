@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "fes2022b-pechescore-v1.0.0",
+  "sourceModel": {
+    "name": "FES2022b",
+    "version": "2022b",
+    "doi": "10.24400/527896/A01-2024.004"
+  },
+  "generatedAtUtc": "2026-07-25T00:00:00Z",
+  "attribution": "The FES2022 Tide product was funded by CNES, produced by LEGOS, NOVELTIS and CLS and made freely available by AVISO.",
+  "format": {
+    "id": "pechescore-tide-spatial-tile",
+    "version": 1
+  },
+  "assets": [
+    {
+      "id": "example-n47-w003",
+      "fileName": "example-n47-w003.pstide",
+      "downloadUrl": "https://github.com/Philipppri/pechescore-tide-data/releases/download/fes2022b-pechescore-v1.0.0/example-n47-w003.pstide",
+      "sizeBytes": 123456,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bounds": {
+        "south": 47.0,
+        "west": -3.0,
+        "north": 48.0,
+        "east": -2.0
+      },
+      "qualityClasses": ["GLOBAL_NATIVE", "GLOBAL_EXTRAPOLATED"]
+    }
+  ]
+}
