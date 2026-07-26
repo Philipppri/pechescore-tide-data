@@ -1,7 +1,15 @@
 # Données sources interdites
 *.nc
+*.nc4
+*.cdf
 *.nc.xz
 *.xz
+*.gz
+*.bz2
+*.7z
+*.rar
+*.tar
+*.zip
 
 # Assets générés localement : à publier dans Releases, pas dans Git
 *.pstide
@@ -30,5 +38,6 @@ Thumbs.db
 *.pem
 *.p12
 *.jks
+*.pfx
 local-review-access/
 *access-local*
